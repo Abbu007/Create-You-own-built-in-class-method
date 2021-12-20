@@ -1,20 +1,23 @@
-class sol:
-   def pow(self, x, n):
-        if x==0 or x==1 or n==1:
-            return x 
 
-        if x==-1:
-            if n%2 ==0:
+class solve():
+    def __init__(self,x,n):
+        self.x=x
+        self.n=n
+    def power(x,n):
+        if x==0 or x==1 or n==1:
+            return x
+        elif x==-1:
+            if n%2==0:
                 return 1
             else:
                 return -1
-        if n==0:
+        elif n==0:
             return 1
-        if n<0:
-            return 1/self.pow(x,-n)
-        val = self.pow(x,n//2)
-        if n%2 ==0:
-            return val*val
-        return val*val*x
-
-print(sol().pow(10, 2))
+        elif n<0:
+            return 1/solve.power(x,-n)
+        else:
+            y=1
+            for i in range(0,n):
+                y*=x
+            return y
+print(solve.power(10,2))
